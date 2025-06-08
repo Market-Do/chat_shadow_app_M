@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Image } from 'react-native';
 import { Link, router } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
-import { Eye, EyeOff, Lock, User } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { useTheme } from '@/context/ThemeContext';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { StatusBar } from 'expo-status-bar';
@@ -77,7 +77,7 @@ export default function LoginScreen() {
         )}
         
         <View style={[styles.inputContainer, { backgroundColor: colors.card, borderColor: colors.border }]}>
-          <User size={20} color={colors.primary} style={styles.inputIcon} />
+          <Feather name="user" size={20} color={colors.primary} style={styles.inputIcon} />
           <TextInput
             style={[styles.input, { color: colors.text }]}
             placeholder="Username"
@@ -89,7 +89,7 @@ export default function LoginScreen() {
         </View>
         
         <View style={[styles.inputContainer, { backgroundColor: colors.card, borderColor: colors.border }]}>
-          <Lock size={20} color={colors.primary} style={styles.inputIcon} />
+          <Feather name="lock" size={20} color={colors.primary} style={styles.inputIcon} />
           <TextInput
             style={[styles.input, { color: colors.text }]}
             placeholder="Password"
@@ -103,8 +103,8 @@ export default function LoginScreen() {
             onPress={() => setShowPassword(!showPassword)}
           >
             {showPassword ? 
-              <EyeOff size={20} color={colors.textSecondary} /> : 
-              <Eye size={20} color={colors.textSecondary} />
+              <Feather name="eye-off" size={20} color={colors.textSecondary} /> : 
+              <Feather name="eye" size={20} color={colors.textSecondary} />
             }
           </TouchableOpacity>
         </View>

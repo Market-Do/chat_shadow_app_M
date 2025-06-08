@@ -3,6 +3,7 @@
     "name": "chat_shadow_app",
     "slug": "chat_shadow_app",
     "version": "1.0.0",
+     "scheme": "chatshadowapp", 
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
