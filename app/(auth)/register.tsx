@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
-import { Eye, EyeOff, Lock, User, ArrowLeft } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { useTheme } from '@/context/ThemeContext';
 import { StatusBar } from 'expo-status-bar';
 
@@ -63,7 +63,7 @@ export default function RegisterScreen() {
             style={styles.backButton} 
             onPress={() => router.back()}
           >
-            <ArrowLeft size={24} color={colors.primary} />
+            <Feather name="arrow-left" size={24} color={colors.primary} />
           </TouchableOpacity>
           <Text style={[styles.headerTitle, { color: colors.text }]}>Create Account</Text>
         </View>
@@ -80,7 +80,7 @@ export default function RegisterScreen() {
           )}
           
           <View style={[styles.inputContainer, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <User size={20} color={colors.primary} style={styles.inputIcon} />
+            <Feather name="user" size={20} color={colors.primary} style={styles.inputIcon} />
             <TextInput
               style={[styles.input, { color: colors.text }]}
               placeholder="Username"
@@ -92,7 +92,7 @@ export default function RegisterScreen() {
           </View>
           
           <View style={[styles.inputContainer, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <Lock size={20} color={colors.primary} style={styles.inputIcon} />
+            <Feather name="lock" size={20} color={colors.primary} style={styles.inputIcon} />
             <TextInput
               style={[styles.input, { color: colors.text }]}
               placeholder="Password"
@@ -106,14 +106,14 @@ export default function RegisterScreen() {
               onPress={() => setShowPassword(!showPassword)}
             >
               {showPassword ? 
-                <EyeOff size={20} color={colors.textSecondary} /> : 
-                <Eye size={20} color={colors.textSecondary} />
+                <Feather name="eye-off" size={20} color={colors.textSecondary} /> : 
+                <Feather name="eye" size={20} color={colors.textSecondary} />
               }
             </TouchableOpacity>
           </View>
           
           <View style={[styles.inputContainer, { backgroundColor: colors.card, borderColor: colors.border }]}>
-            <Lock size={20} color={colors.primary} style={styles.inputIcon} />
+            <Feather name="lock" size={20} color={colors.primary} style={styles.inputIcon} />
             <TextInput
               style={[styles.input, { color: colors.text }]}
               placeholder="Confirm Password"
