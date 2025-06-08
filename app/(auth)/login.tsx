@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform, Image } from 'react-native';
 import { Link, router } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
-import { Eye, EyeOff, Lock, User } from 'lucide-react-native';
+import { Eye, EyeOff, Lock, User } from 'react-native-vector-icons';
 import { useTheme } from '@/context/ThemeContext';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { StatusBar } from 'expo-status-bar';

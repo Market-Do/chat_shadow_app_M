@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, Keyboard
 import { useLocalSearchParams } from 'expo-router';
 import { useTheme } from '@/context/ThemeContext';
 import { MessageBubble } from '@/components/MessageBubble';
-import { Send, Image as ImageIcon, Mic, Smile } from 'lucide-react-native';
+import { Send, Image as ImageIcon, Mic, Smile } from 'react-native-vector-icons';
 import { mockMessages, mockChats } from '@/utils/mockData';
 import { Message, Chat } from '@/types';
 import { useEncryption } from '@/hooks/useEncryption';

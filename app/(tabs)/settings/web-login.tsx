@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useTheme } from '@/context/ThemeContext';
-import { QrCode, RefreshCcw } from 'lucide-react-native';
+import { QrCode, RefreshCcw } from 'react-native-vector-icons';
 import * as Crypto from 'expo-crypto';
 
 export default function WebLoginScreen() {

@@ -3,7 +3,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { Avatar } from './Avatar';
 import { formatTime } from '@/utils/formatters';
 import { Chat } from '@/types';
-import { Check, CheckCheck, Lock } from 'lucide-react-native';
+import { Check, CheckCheck, Lock } from 'react-native-vector-icons';
 
 interface ChatPreviewProps {
   chat: Chat;

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from '@/context/ThemeContext';
 import { formatMessageTime } from '@/utils/formatters';
 import { Message } from '@/types';
-import { Lock, Clock } from 'lucide-react-native';
+import { Lock, Clock } from 'react-native-vector-icons';
 import { useState } from 'react';
 import { useEncryption } from '@/hooks/useEncryption';
 

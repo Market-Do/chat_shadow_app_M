@@ -14,7 +14,7 @@ import {
   QrCode,
   HelpCircle,
   Info
-} from 'lucide-react-native';
+} from 'react-native-vector-icons';
 
 export default function SettingsScreen() {
   const { colors, theme, toggleTheme } = useTheme();

@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router';
-import { MessageSquare, Users, Settings } from 'lucide-react-native';
+import { MessageSquare, Users, Settings } from 'react-native-vector-icons';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function TabLayout() {

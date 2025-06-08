@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { useTheme } from '@/context/ThemeContext';
-import { MessageSquarePlus, Search } from 'lucide-react-native';
+import { MessageSquarePlus, Search } from 'react-native-vector-icons';
 import { ChatPreview } from '@/components/ChatPreview';
 import { mockChats } from '@/utils/mockData';
 

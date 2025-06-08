@@ -4,7 +4,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { router } from 'expo-router';
 import { User } from '@/types';
 import { mockUsers } from '@/utils/mockData';
-import { Search, X, Check } from 'lucide-react-native';
+import { Search, X, Check } from 'react-native-vector-icons';
 import { Avatar } from '@/components/Avatar';
 
 export default function NewChatScreen() {
