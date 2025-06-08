@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from '@/context/ThemeContext';
 import { formatMessageTime } from '@/utils/formatters';
 import { Message } from '@/types';
-import { Lock, Clock } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { useState } from 'react';
 import { useEncryption } from '@/hooks/useEncryption';
 
@@ -50,7 +50,7 @@ export function MessageBubble({ message, isCurrentUser }: MessageBubbleProps) {
       ]}>
         {message.encrypted && !isDecrypted ? (
           <TouchableOpacity style={styles.encryptedContent} onPress={handleDecrypt}>
-            <Lock size={16} color={isCurrentUser ? 'white' : colors.primary} />
+            <Feather name="lock" size={16} color={isCurrentUser ? 'white' : colors.primary} />
             <Text style={[
               styles.encryptedText,
               { color: isCurrentUser ? 'rgba(255,255,255,0.7)' : colors.textSecondary }
@@ -77,7 +77,7 @@ export function MessageBubble({ message, isCurrentUser }: MessageBubbleProps) {
           
           {remainingHours < 24 && (
             <View style={styles.expiryContainer}>
-              <Clock 
+              <Feather name="clock"
                 size={12} 
                 color={isCurrentUser ? 'rgba(255,255,255,0.7)' : colors.textSecondary} 
               />

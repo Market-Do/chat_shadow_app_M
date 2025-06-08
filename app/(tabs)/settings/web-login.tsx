@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { useTheme } from '@/context/ThemeContext';
-import { QrCode, RefreshCcw } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import * as Crypto from 'expo-crypto';
 
 export default function WebLoginScreen() {
@@ -66,7 +66,7 @@ export default function WebLoginScreen() {
                 style={[styles.refreshButton, { backgroundColor: colors.primary }]}
                 onPress={generateQrCode}
               >
-                <RefreshCcw size={20} color="white" />
+                <Feather name="refresh-ccw" size={20} color="white" />
                 <Text style={styles.refreshText}>Generate New Code</Text>
               </TouchableOpacity>
             </View>
@@ -74,7 +74,7 @@ export default function WebLoginScreen() {
             <>
               <View style={[styles.qrBox, { backgroundColor: 'white' }]}>
                 {/* In a real app, use a proper QR code library */}
-                <QrCode size={200} color="black" />
+                <Feather name="grid" size={200} color="black" />
                 <Text style={styles.scanText}>Scan with Web App</Text>
               </View>
               <View style={styles.timerContainer}>

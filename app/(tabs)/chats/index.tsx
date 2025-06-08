@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { useTheme } from '@/context/ThemeContext';
-import { MessageSquarePlus, Search } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { ChatPreview } from '@/components/ChatPreview';
 import { mockChats } from '@/utils/mockData';
 
@@ -17,7 +17,7 @@ export default function ChatsScreen() {
           style={[styles.searchBar, { backgroundColor: colors.inputBackground, borderColor: colors.border }]}
           onPress={() => {/* Open search modal */}}
         >
-          <Search size={20} color={colors.textSecondary} />
+          <Feather name="search" size={20} color={colors.textSecondary} />
           <Text style={[styles.searchText, { color: colors.textSecondary }]}>Search chats</Text>
         </TouchableOpacity>
       </View>
@@ -45,7 +45,7 @@ export default function ChatsScreen() {
         style={[styles.newChatButton, { backgroundColor: colors.primary }]}
         onPress={() => router.push('/chats/new-chat')}
       >
-        <MessageSquarePlus size={24} color="white" />
+        <Feather name="message-square" size={24} color="white" />
       </TouchableOpacity>
     </View>
   );

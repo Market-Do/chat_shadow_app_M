@@ -4,7 +4,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { router } from 'expo-router';
 import { User } from '@/types';
 import { mockUsers } from '@/utils/mockData';
-import { Search, X, Check } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { Avatar } from '@/components/Avatar';
 
 export default function NewChatScreen() {
@@ -36,7 +36,7 @@ export default function NewChatScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={[styles.searchContainer, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
         <View style={[styles.searchBar, { backgroundColor: colors.inputBackground, borderColor: colors.border }]}>
-          <Search size={20} color={colors.textSecondary} />
+          <Feather name="search" size={20} color={colors.textSecondary} />
           <TextInput 
             style={[styles.searchInput, { color: colors.text }]}
             placeholder="Search users..."
@@ -47,7 +47,7 @@ export default function NewChatScreen() {
           />
           {searchQuery ? (
             <TouchableOpacity onPress={() => setSearchQuery('')}>
-              <X size={20} color={colors.textSecondary} />
+              <Feather name="x" size={20} color={colors.textSecondary} />
             </TouchableOpacity>
           ) : null}
         </View>
@@ -73,7 +73,7 @@ export default function NewChatScreen() {
                 />
                 <Text style={[styles.selectedUsername, { color: colors.text }]}>{item.username}</Text>
                 <View style={[styles.removeButton, { backgroundColor: colors.error }]}>
-                  <X size={12} color="white" />
+                  <Feather name="x" size={12} color="white" />
                 </View>
               </TouchableOpacity>
             )}
@@ -108,7 +108,7 @@ export default function NewChatScreen() {
                 : { borderColor: colors.border }
             ]}>
               {selectedUsers.some(u => u.id === item.id) && (
-                <Check size={16} color="white" />
+                <Feather name="check" size={16} color="white" />
               )}
             </View>
           </TouchableOpacity>

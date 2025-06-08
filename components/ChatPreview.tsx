@@ -3,7 +3,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { Avatar } from './Avatar';
 import { formatTime } from '@/utils/formatters';
 import { Chat } from '@/types';
-import { Check, CheckCheck, Lock } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 interface ChatPreviewProps {
   chat: Chat;
@@ -43,7 +43,7 @@ export function ChatPreview({ chat, onPress }: ChatPreviewProps) {
         <View style={styles.messageRow}>
           <View style={styles.messageContent}>
             {chat.isEncrypted && (
-              <Lock size={14} color={colors.primary} style={styles.lockIcon} />
+              <Feather name="lock" size={14} color={colors.primary} style={styles.lockIcon} />
             )}
             <Text 
               style={[
@@ -65,9 +65,9 @@ export function ChatPreview({ chat, onPress }: ChatPreviewProps) {
               </View>
             ) : chat.lastMessageSent ? (
               chat.lastMessageRead ? (
-                <CheckCheck size={16} color={colors.success} />
+                <Feather name="check-circle" size={16} color={colors.success} />
               ) : (
-                <Check size={16} color={colors.textSecondary} />
+                <Feather name="check" size={16} color={colors.textSecondary} />
               )
             ) : null}
           </View>

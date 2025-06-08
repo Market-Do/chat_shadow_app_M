@@ -3,18 +3,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { router } from 'expo-router';
 import { useAuth } from '@/context/AuthContext';
 import { Avatar } from '@/components/Avatar';
-import {
-  User,
-  PaintBucket,
-  Lock,
-  Bell,
-  Moon,
-  LogOut,
-  ChevronRight,
-  QrCode,
-  HelpCircle,
-  Info
-} from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 
 export default function SettingsScreen() {
   const { colors, theme, toggleTheme } = useTheme();
@@ -40,7 +29,7 @@ export default function SettingsScreen() {
               Online
             </Text>
           </View>
-          <ChevronRight size={20} color={colors.textSecondary} />
+          <Feather name="chevron-right" size={20} color={colors.textSecondary} />
         </TouchableOpacity>
       </View>
       
@@ -52,13 +41,13 @@ export default function SettingsScreen() {
             style={[styles.option, { borderBottomColor: colors.border }]}
             onPress={() => router.push('/settings/theme')}
           >
-            <PaintBucket size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="sliders" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>Appearance</Text>
-            <ChevronRight size={20} color={colors.textSecondary} />
+            <Feather name="chevron-right" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
           
           <View style={[styles.option, { borderBottomWidth: 0 }]}>
-            <Moon size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="moon" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>Dark Mode</Text>
             <Switch
               value={theme === 'dark'}
@@ -78,26 +67,26 @@ export default function SettingsScreen() {
             style={[styles.option, { borderBottomColor: colors.border }]}
             onPress={() => router.push('/settings/security')}
           >
-            <Lock size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="lock" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>Security</Text>
-            <ChevronRight size={20} color={colors.textSecondary} />
+            <Feather name="chevron-right" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
           
           <TouchableOpacity 
             style={[styles.option, { borderBottomColor: colors.border }]}
           >
-            <Bell size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="bell" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>Notifications</Text>
-            <ChevronRight size={20} color={colors.textSecondary} />
+            <Feather name="chevron-right" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
           
           <TouchableOpacity 
             style={[styles.option, { borderBottomWidth: 0 }]}
             onPress={() => router.push('/settings/web-login')}
           >
-            <QrCode size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="grid" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>Web Login</Text>
-            <ChevronRight size={20} color={colors.textSecondary} />
+            <Feather name="chevron-right" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
         </View>
       </View>
@@ -107,24 +96,24 @@ export default function SettingsScreen() {
         
         <View style={[styles.optionsList, { backgroundColor: colors.card }]}>
           <TouchableOpacity style={[styles.option, { borderBottomColor: colors.border }]}>
-            <HelpCircle size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="help-circle" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>Help</Text>
-            <ChevronRight size={20} color={colors.textSecondary} />
+            <Feather name="chevron-right" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
           
           <TouchableOpacity style={[styles.option, { borderBottomWidth: 0 }]}>
-            <Info size={20} color={colors.primary} style={styles.optionIcon} />
+            <Feather name="info" size={20} color={colors.primary} style={styles.optionIcon} />
             <Text style={[styles.optionText, { color: colors.text }]}>About</Text>
-            <ChevronRight size={20} color={colors.textSecondary} />
+            <Feather name="chevron-right" size={20} color={colors.textSecondary} />
           </TouchableOpacity>
         </View>
       </View>
       
       <TouchableOpacity 
-        style={[styles.logoutButton, { backgroundColor: colors.error }]}
+        style={[styles.logoutButton, { backgroundColor: colors.error }]} // Mantido como estava, pois LogOut já é do Feather
         onPress={signOut}
       >
-        <LogOut size={20} color="white" style={{ marginRight: 8 }} />
+        <Feather name="log-out" size={20} color="white" style={{ marginRight: 8 }} />
         <Text style={styles.logoutText}>Log Out</Text>
       </TouchableOpacity>
       

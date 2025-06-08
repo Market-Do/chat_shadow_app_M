@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, Keyboard
 import { useLocalSearchParams } from 'expo-router';
 import { useTheme } from '@/context/ThemeContext';
 import { MessageBubble } from '@/components/MessageBubble';
-import { Send, Image as ImageIcon, Mic, Smile } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { mockMessages, mockChats } from '@/utils/mockData';
 import { Message, Chat } from '@/types';
 import { useEncryption } from '@/hooks/useEncryption';
@@ -99,7 +99,7 @@ export default function ChatScreen() {
         <View style={[styles.inputContainer, { backgroundColor: colors.card, borderTopColor: colors.border }]}>
           <View style={[styles.inputWrapper, { backgroundColor: colors.inputBackground, borderColor: colors.border }]}>
             <TouchableOpacity style={styles.attachButton}>
-              <ImageIcon size={24} color={colors.textSecondary} />
+              <Feather name="image" size={24} color={colors.textSecondary} />
             </TouchableOpacity>
             
             <TextInput
@@ -112,19 +112,19 @@ export default function ChatScreen() {
             />
             
             <TouchableOpacity style={styles.emojiButton}>
-              <Smile size={24} color={colors.textSecondary} />
+              <Feather name="smile" size={24} color={colors.textSecondary} />
             </TouchableOpacity>
             
             {!inputText ? (
               <TouchableOpacity style={styles.micButton}>
-                <Mic size={24} color={colors.textSecondary} />
+                <Feather name="mic" size={24} color={colors.textSecondary} />
               </TouchableOpacity>
             ) : (
               <TouchableOpacity 
                 style={[styles.sendButton, { backgroundColor: colors.primary }]}
                 onPress={sendMessage}
               >
-                <Send size={20} color="white" />
+                <Feather name="send" size={20} color="white" />
               </TouchableOpacity>
             )}
           </View>

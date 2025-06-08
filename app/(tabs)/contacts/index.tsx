@@ -4,7 +4,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { router } from 'expo-router';
 import { User } from '@/types';
 import { mockUsers } from '@/utils/mockData';
-import { Search, Plus, UserPlus, X } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { Avatar } from '@/components/Avatar';
 
 export default function ContactsScreen() {
@@ -25,7 +25,7 @@ export default function ContactsScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={[styles.searchContainer, { backgroundColor: colors.card, borderBottomColor: colors.border }]}>
         <View style={[styles.searchBar, { backgroundColor: colors.inputBackground, borderColor: colors.border }]}>
-          <Search size={20} color={colors.textSecondary} />
+          <Feather name="search" size={20} color={colors.textSecondary} />
           <TextInput 
             style={[styles.searchInput, { color: colors.text }]}
             placeholder="Search contacts..."
@@ -35,7 +35,7 @@ export default function ContactsScreen() {
           />
           {searchQuery ? (
             <TouchableOpacity onPress={() => setSearchQuery('')}>
-              <X size={20} color={colors.textSecondary} />
+              <Feather name="x" size={20} color={colors.textSecondary} />
             </TouchableOpacity>
           ) : null}
         </View>
@@ -61,7 +61,7 @@ export default function ContactsScreen() {
               </Text>
             </View>
             <TouchableOpacity style={styles.chatButton} onPress={() => navigateToChat(item)}>
-              <Plus size={20} color={colors.primary} />
+              <Feather name="message-circle" size={20} color={colors.primary} />
             </TouchableOpacity>
           </TouchableOpacity>
         )}
@@ -78,7 +78,7 @@ export default function ContactsScreen() {
         style={[styles.addButton, { backgroundColor: colors.primary }]}
         onPress={() => {/* Open add contact modal */}}
       >
-        <UserPlus size={24} color="white" />
+        <Feather name="user-plus" size={24} color="white" />
       </TouchableOpacity>
     </View>
   );

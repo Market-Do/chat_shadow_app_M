@@ -1,5 +1,5 @@
 import { Tabs } from 'expo-router';
-import { MessageSquare, Users, Settings } from 'react-native-vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function TabLayout() {
@@ -31,7 +31,7 @@ export default function TabLayout() {
         options={{
           title: 'Chats',
           tabBarIcon: ({ color, size }) => (
-            <MessageSquare size={size} color={color} />
+            <Feather name="message-square" size={size} color={color} />
           ),
         }}
       />
@@ -40,7 +40,7 @@ export default function TabLayout() {
         options={{
           title: 'Contacts',
           tabBarIcon: ({ color, size }) => (
-            <Users size={size} color={color} />
+            <Feather name="users" size={size} color={color} />
           ),
         }}
       />
@@ -49,7 +49,7 @@ export default function TabLayout() {
         options={{
           title: 'Settings',
           tabBarIcon: ({ color, size }) => (
-            <Settings size={size} color={color} />
+            <Feather name="settings" size={size} color={color} />
           ),
         }}
       />
